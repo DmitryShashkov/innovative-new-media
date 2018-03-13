@@ -1,0 +1,25 @@
+<div class="app">
+    <div class="header">
+        <img class="name" [src]="deployURL + '/assets/images/name.gif'" />
+        <img class="chat" [src]="deployURL + '/assets/images/chat.gif'" />
+    </div>
+
+    <div class="menu">
+        <a class="entry" [routerLink]="['/']"> Home </a>
+        <a class="entry" [routerLink]="['/design']"> Web Design </a>
+        <a class="entry" [routerLink]="['/development']"> Web Development </a>
+        <a class="entry" [routerLink]="['/graphic']"> Graphic Design </a>
+        <a class="entry" [routerLink]="['/banners']"> Flash Banners </a>
+        <a class="entry" [routerLink]="['/animation']"> Flash Animation </a>
+        <a class="entry" [routerLink]="['/marketing']"> Online Marketing </a>
+        <a class="entry" [routerLink]="['/seo']"> SEO - SEM </a>
+    </div>
+
+    <div class="router-outlet">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer">
+        &copy; Copyrights 2018 Innovative New Media. All Rights Reserved
+    </div>
+</div>
