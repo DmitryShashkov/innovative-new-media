@@ -1,0 +1,187 @@
+<div class="blog">
+    <div class="title">
+        Top 10 Most Popular Swift Libraries from GitHub
+    </div>
+
+    <img class="image" [src]="deployURL + '/assets/images/swift-libraries.png'" alt="Swift libraries" />
+
+    <div class="paragraph">
+        As a team that is directly connected with iOS app development, we keep an eye on all the innovations in the IT industry including libraries. It is not a secret that the usage of libraries can help to save a lot of time. However, which ones to use when it comes to such a relatively new language as Swift?
+        <br />
+        In this article, we are going to present you top 10 Swift libraries on GitHub for iOS development.
+    </div>
+
+    <div class="sub-title">
+        Alamofire
+    </div>
+    <div class="paragraph">
+        Alamofire is one of the most popular libraries for iOS and OS X with over 22 thousand stars and 4 thousand forks on GitHub. The library has received the award as the best library of 2012 according to Reader's Choice Awards.
+    </div>
+
+    <img class="image" [src]="deployURL + '/assets/images/alamofire.png'" alt="Alamofire" />
+
+    <div class="paragraph">
+        It is an HTTP networking library that is written in Swift and provides mobile developers with serpentine query and response methods, JSON parameters, authentication and many other features. The library also includes such components as Alamofire Image and Alamofire Network Activity Indicator.
+        <br />
+        This is the image library that includes image response serializers, UIImage and UIImageView extensions, custom image filters etc.
+    </div>
+    <div class="paragraph">
+        Alamofire Network Activity Indicator: with its help, you may control the visibility indicator of network activity on iOS by means of Alamofire.
+    </div>
+
+    <div class="sub-title">
+        Swifty JSON
+    </div>
+    <div class="paragraph">
+        Swifty JSON library intended to cope with JSON data in Swift. Explicit types in Swift help to make sure that you did not make some mistakes in a code to avoid issues in an app itself. However, sometimes it is quite difficult to deal with them when working with JSON. So, this library intended to help you by converting a long code into a short one. It also allows automatic unwrapping and works well with Alamofire.
+    </div>
+
+    <img class="image" [src]="deployURL + '/assets/images/json-file-processing.png'" alt="JSON file processing" />
+
+    <div class="paragraph">
+        Code without SwiftyJSON:
+    </div>
+    <pre class="code">
+        if let statusesArray = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: Any]],
+        let user = statusesArray[0]["user"] as? [String: Any],
+        let username = user["name"] as? String {{ '{' }}
+            // Finally we got the username
+        }
+    </pre>
+    <div class="paragraph">
+        Code when using SwiftyJSON:
+    </div>
+    <pre class="code">
+        let json = JSON(data: dataFromNetworking)
+        if let userName = json[0]["user"]["name"].string {{ '{' }}
+            // Now you got your value
+        }
+    </pre>
+
+    <div class="sub-title">
+        Perfect
+    </div>
+    <div class="paragraph">
+        The majority of modern applications have a client-server architecture while iOS developers can access the client’s world only. Perfect is positioned by its creators as a superb web server and toolkit for developers using Swift programming language for the creation of apps and other REST services.
+        <br />
+        Perfect consists of two parts - a server library called PerfectLib and an app with the minimalistic interface called PerfectServer. They are both open source, so you can theoretically change them for your needs.
+    </div>
+
+    <div class="sub-title">Carthage </div>
+    <div class="paragraph">
+        Carthage is a simple decentralized dependency manager for iOS and Mac. Dependency managers perform a number of useful features. Their aim is to simplify and standardize the process of a third-party code selection and inclusion to your project as well as simplify third-party libraries updating and choose compatible versions of dependencies.
+        <br />
+        Carthage builds its dependency and provides binary structures, but you retain complete control over the structure of the project and the configuration. Also, the library will not change any project’s files or app building options. Besides, you can add frameworks to your projects but only dynamic ones that are available for iOS 8 and higher.
+    </div>
+
+    <div class="sub-title">
+        SwiftLint
+    </div>
+    <div class="paragraph">
+        This is a utility from Realm developers intended for automatic Swift code verification and for keeping to the coding standards in order to increase the quality of code. The utility contains a set of rules that are based on GitHub’s Swift Style Guide. In addition, you can also add your own rules to the project based on regular expressions.
+        <br />
+        SwiftLint has an auto-correction, so after the code is verified you can correct mistakes but some of them can be corrected only manually.
+    </div>
+
+    <div class="sub-title">
+        Quick
+    </div>
+
+    <img class="image" [src]="deployURL + '/assets/images/framework-that-extends-data-comparison-capabilities.png'"
+        alt="Framework that extends data comparison capabilities.png" />
+
+    <div class="paragraph">
+        Quick is intended for BDD testing on Swift and Objective-C. It comes with Nimble, a framework that extends data comparison capabilities. Underneath you can see an example of Quick and Nimble interaction.
+    </div>
+    <pre class="code">
+        // Swift
+
+        import Quick
+        import Nimble
+
+        class TableOfContentsSpec: QuickSpec {{ '{' }}
+            override func spec() {{ '{' }}
+                describe("the 'Documentation' directory") {{ '{' }}
+                    it("has everything you need to get started") {{ '{' }}
+                        let sections = Directory("Documentation").sections
+                        expect(sections).to(contain("Organized Tests with Quick Examples and Example Groups"))
+                        expect(sections).to(contain("Installing Quick"))
+                    }
+
+                    context("if it doesn't have what you're looking for") {{ '{' }}
+                        it("needs to be updated") {{ '{' }}
+                            let you = You(awesome: true)
+                            expect {{ '{' }}you.submittedAnIssue}.toEventually(beTruthy())
+                        }
+                    }
+                }
+            }
+        }
+    </pre>
+
+    <div class="sub-title">Eureka</div>
+    <div class="paragraph">
+        This is a very flexible and extensible library supporting full customization (both general and individual), as well as uses Swift security type to avoid mistakes during the development.
+        <br />
+        Eureka can help you to save some time in case your app has a variety of forms. Having rows, sections, and forms the library makes it easy to write dynamic table forms.
+        <br />
+        Underneath you can see an example of how to create a form using FormViewController.
+    </div>
+    <pre class="code">
+        import Eureka
+
+        class MyFormViewController: FormViewController {{ '{' }}
+            override func viewDidLoad() {{ '{' }}
+                super.viewDidLoad()
+                form
+                +++ Section("Section1")
+                    <<< TextRow() {{ '{' }} row in
+                        row.title = "Text Row"
+                        row.placeholder = "Enter text here"
+                    }
+                    <<< PhoneRow() {{ '{' }}
+                        $0.title = "Phone Row"
+                        $0.placeholder = "And numbers here"
+                    }
+                +++ Section("Section2")
+                    <<< DateRow() {{ '{' }}
+                        $0.title = "Date Row"
+                        $0.value = Date(timeIntervalSinceReferenceDate: 0)
+                    }
+            }
+        }
+    </pre>
+
+    <div class="sub-title">Moya</div>
+    <div class="paragraph">
+        Using Moya you do not have to worry about where (and how) to put network queries. Special network layers are common in iOS applications, so in some cases, it is difficult to write new apps, maintain existing ones, and write tests for them.
+        <br />
+        Having conducted a certain setup, it becomes really easy to use Moya and you can access an API like the one underneath.
+    </div>
+    <pre class="code">
+        provider = MoyaProvider{{ '<' }}GitHub>()
+        provider.request(.zen) {{ '{' }} result in
+            switch result {{ '{' }}
+                case let .success(moyaResponse):
+                    let data = moyaResponse.data
+                    let statusCode = moyaResponse.statusCode
+                    // do something with the response data or statusCode
+                case let .failure(error):
+                    // this means there was a network failure - either the request
+                    // wasn't sent (connectivity), or no response was received (server
+                    // timed out).  If the server responds with a 4xx or 5xx error, that
+                    // will be sent as a ".success"-ful response.
+            }
+        }
+    </pre>
+
+    <div class="sub-title">RxSwift</div>
+    <div class="paragraph">
+        Being a Swift version of Rx, this tool is intended for functional reactive programming. The main goal of RxSwift is to easily compose asynchronous operations as well as event or data streams. Moreover, Rx does not have any dependencies.
+    </div>
+
+    <div class="sub-title">SnapKit</div>
+    <div class="paragraph">
+        SnapKit is a library with an automatic layout. It simplifies the writing of auto-layout with the minimum number of code without any losses in readability. The design of the library helps to avoid errors when programming the user interface.
+    </div>
+</div>
