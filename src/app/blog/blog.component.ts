@@ -8,7 +8,7 @@ import {Meta, Title} from "@angular/platform-browser";
     styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
-    public deployURL = environment.deployURL;
+    public deployURL = environment.imagesServerURL;
 
     constructor (
         private titleService: Title,

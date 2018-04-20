@@ -7,5 +7,5 @@ import {environment} from "../../environments/environment";
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-    public deployURL = environment.deployURL;
+    public deployURL = environment.imagesServerURL;
 }
