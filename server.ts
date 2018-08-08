@@ -1,9 +1,10 @@
 import { ngExpressEngine, NgSetupOptions } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { enableProdMode } from '@angular/core';
-import { Express, Response } from 'express';
+import { Express, Request, Response } from 'express';
 import { join } from 'path';
 import * as express from 'express';
+import * as cors from 'cors';
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
@@ -36,6 +37,8 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/mai
         this.expressApp.set('view engine', this.templateEngine);
         this.expressApp.set('views', this.VIEW_FOLDER);
 
+        this.expressApp.use(cors());
+
         this.expressApp.get('*', this.handleRequests.bind(this));
 
         this.expressApp.listen(this.PORT, this.startCallback.bind(this));
@@ -45,7 +48,7 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/mai
         console.log(`Listening on ${this.PORT}`);
     }
 
-    private handleRequests (req: Express.Request, res: Response) : void {
+    private handleRequests (req: Request, res: Response) : void {
         const view: string = 'index';
         const options: Object = { req };
         return res.render(view, options);
