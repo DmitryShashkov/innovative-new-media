@@ -24,7 +24,7 @@ import {BlogComponent} from "./blog/blog.component";
             { path: 'about', component: AboutComponent },
             { path: 'why-choose', component: WhyChooseComponent },
             { path: 'blog', component: BlogComponent }
-        ], { useHash: true }),
+        ]),
         // TransferHttpCacheModule,
     ],
     providers: [],
