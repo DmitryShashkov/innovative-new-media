@@ -17,8 +17,7 @@ import {BlogComponent} from "./blog/blog.component";
         BlogComponent
     ],
     imports: [
-        // BrowserModule.withServerTransition({appId: 'my-app'}),
-        BrowserModule,
+        BrowserModule.withServerTransition({appId: 'my-app'}),
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: '', loadChildren: './content/content.module#ContentModule' },
