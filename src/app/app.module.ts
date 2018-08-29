@@ -7,6 +7,8 @@ import {HomeComponent} from "./home/home.component";
 import {AboutComponent} from "./about/about.component";
 import {WhyChooseComponent} from './why-choose/why-choose.component';
 import {BlogComponent} from "./blog/blog.component";
+import {ModuleMapLoaderModule} from "@nguniversal/module-map-ngfactory-loader";
+import {TransferHttpCacheModule} from "@nguniversal/common";
 
 @NgModule({
     declarations: [
@@ -25,7 +27,7 @@ import {BlogComponent} from "./blog/blog.component";
             { path: 'why-choose', component: WhyChooseComponent },
             { path: 'blog', component: BlogComponent }
         ]),
-        // TransferHttpCacheModule,
+        TransferHttpCacheModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
