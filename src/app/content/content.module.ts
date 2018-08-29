@@ -8,6 +8,7 @@ import {BannersComponent} from "./banners/banners.component";
 import {GraphicComponent} from "./graphic/graphic.component";
 import {MarketingComponent} from "./marketing/marketing.component";
 import {SeoComponent} from "./seo/seo.component";
+import {CyrcuryTedFrcasComponent} from "./cyrcury-ted-frcas/cyrcury-ted-frcas.component";
 
 @NgModule({
     imports: [
@@ -40,6 +41,10 @@ import {SeoComponent} from "./seo/seo.component";
             {
                 path: 'seo',
                 component: SeoComponent
+            },
+            {
+                path: 'cyrcury-ted-frcas',
+                component: CyrcuryTedFrcasComponent
             }
         ])
     ],
@@ -50,7 +55,8 @@ import {SeoComponent} from "./seo/seo.component";
         BannersComponent,
         GraphicComponent,
         MarketingComponent,
-        SeoComponent
+        SeoComponent,
+        CyrcuryTedFrcasComponent,
     ]
 })
 export class ContentModule {}
